@@ -1,0 +1,87 @@
+<div class="header-wrapper fixed z-10 w-full flex px-4 drop-shadow bg-white/70 backdrop-blur-md border-[#1618231F]">
+	<div class="header-inner w-[1426px] flex justify-between items-center h-[60px] pl-3 pr-6">
+		<div class="logo">
+			<a href="/" class="logo flex gap-2 items-center">
+				<img src="/logo.png" alt="" class="w-12 h-12" />
+				<p
+					class="hidden md:block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">
+					Medlab
+					Vĩnh Viễn</p>
+			</a>
+		</div>
+		<div
+			class="search flex items-center w-[500px] h-[38px] border-[1px] border-transparent ring-1 ring-slate-200 pl-[16px] py-[12px] rounded-lg focus-within:ring-[#1618231F]">
+			@* {LoadingContextValue ? (
+			<Skeleton />
+			) : (
+			<>
+				<TippyHeadless class="bg-white min-w-[200px] h-full" visible={showResult && searchValue.length> 0}
+					placement="bottom"
+					interactive={true}
+					onClickOutside={() => setShowResult(false)}
+					render={attrs => (
+					<PopperWrapper>
+						{searchResult.length > 0 ? (
+						<div class="search-result" tabIndex="-1" {...attrs}>
+							{/* <ul>
+								{searchResult.map(item => (
+								<li>{item}</li>
+								))}
+							</ul> */}
+
+							<h2 class="text-[14px] text-[#51525b] font-semibold px-3 pt-1">Accounts</h2>
+
+							{searchResult.map(item => (
+							<AccountItem loading={loading} data={item} key={item.id} />
+							))}
+						</div>
+						) : (
+						<p class="px-2 py-2">Chưa làm model gợi ý xong bạn ơi</p>
+						)}
+					</PopperWrapper>
+					)}>
+					<input ref={inputRef} value={searchValue} placeholder="Tìm kiếm" class={`${styles.input}
+						bg-transparent w-full h-[21px] outline-none text-[#8a8b90] font-light text-[16px]
+						tracking-wide`} onChange={handleOnChange} onFocus={()=> setShowResult(true)}
+					/>
+				</TippyHeadless>
+				<button onClick={handleDelete} class="flex items-center justify-center w-[40px] text-[#777778]">
+					{
+					searchValue && !loading && (
+					//
+					<HiMiniXCircle class="delete-icon text-[20px]" />
+					<TiDelete class="delete-icon text-[20px]" />
+					)
+					}
+					{loading && (
+					<AiOutlineLoading3Quarters class="loading-icon text-[16px] animate-spin " />
+					)}
+				</button>
+				<span class="w-[1px] h-[28px] bg-[#1618231F]"></span>
+				<button class={`${styles.searchIcon} pl-[12px] pr-[16px] py-[11px] text-[#A6A7AB] hover:bg-gray-200`}>
+					<div>
+						<IoIosSearch style={{ width: '24px' , height: '24px' }} />
+					</div>
+				</button>
+			</>
+			)
+			} *@
+		</div>
+	</div>
+</div>
+
+<script>
+	@* document.addEventListener("DOMContentLoaded", function () {
+		tippy('#tippy-trigger', {
+			content: document.querySelector('#tippy-content').innerHTML,
+			allowHTML: true,
+			interactive: true,
+			placement: 'bottom',
+			theme: 'custom',
+			arrow: false,
+			trigger: 'mouseenter focus',
+			animation: 'scale',
+			delay: [0, 500]
+		});
+	}); *@
+</script>

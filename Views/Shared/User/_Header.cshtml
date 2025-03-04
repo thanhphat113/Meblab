@@ -1,0 +1,152 @@
+@{
+	var currentUrl = Context.Request.Path.ToString().ToLower();
+}
+
+<header class="header-wrapper fixed w-full md:px-8 md:pt-1 border-[#1618231F] z-50">
+	<div class="absolute inset-0 bg-white/80 backdrop-blur-lg -z-10 drop-shadow-sm"></div>
+	<div id="top-header"
+		class="hidden translate-y-0 border-b-[0.5px] border-slate-200 md:flex duration-300 w-full items-center justify-between px-2 text-white gap-2">
+		<a href="/" class="logo flex flex-col gap-2 items-center">
+			<img src="/logo.png" alt="" class="w-20 h-20" />
+			<p
+				class="hidden md:block bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">
+				Medlab
+				Vĩnh Viễn</p>
+		</a>
+		<div class="flex items-center gap-4">
+			<a href="/tra-cuu"
+				class="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-6 py-4 pr-6 text-pink-600 font-sans ring-2 ring-pink-600/70">
+				<i class="fas fa-vial w-4 h-4"></i>
+				Tra cứu kết quả xét nghiệm
+			</a>
+			<a href="tel:+0909636293"
+				class="flex items-center gap-2 text-lg font-medium rounded-lg leading-4 pl-6 py-4 pr-6 text-pink-600 font-sans  ring-2 ring-pink-600/70">
+				<i class="fas fa-phone-alt"></i>
+				0909 636293
+			</a>
+		</div>
+	</div>
+	<div id="bottom-header" class=" flex md:mt-0 justify-between mx-4 md:mx-0 items-center
+		duration-300">
+		<button onClick={toggleIsShowNavigateModal} class="block md:hidden p-1">
+			<SlMenu class="text-2xl" />
+		</button>
+		<a href="/" class="logo flex md:hidden gap-2 items-center">
+			<p
+				class="inline md:hidden bg-gradient-to-br from-sky-900 to-sky-500 text-transparent bg-clip-text text-base font-semibold font-sans">
+				Medlab
+				Vĩnh Viễn</p>
+			<img src="/logo.png" alt="" class="w-10 h-10" />
+		</a>
+
+		<div class="hidden md:flex w-full items-center py-1 justify-between">
+			<div class="flex items-center gap-8">
+				<a href="/" class="@(currentUrl == "/" ? "text-white bg-blue-600" : "text-slate-500") text-lg
+					hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium font-sans">TRANG
+					CHỦ</a>
+				<a href="/dich-vu" class="@(currentUrl == "/dich-vu" ? "text-white bg-blue-600" : "text-slate-500") text-lg hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg
+					font-medium font-sans">
+					DỊCH VỤ
+				</a>
+				<div class="text-slate-500 text-lg  font-medium flex items-center gap-2 font-sans">
+					<div id="tippy-trigger" class="flex justify-between items-center gap-2">
+						<p>GÓI XÉT NGHIỆM</p>
+						<i class="fas fa-caret-down"></i>
+					</div>
+
+					<div id="tippy-content"
+						class="hidden max-w-[500px] mt-2 bg-white duration-500 drop-shadow-sm rounded-md">
+						<div
+							class="flex flex-col w-[15rem] bg-white gap-2 items-start ring-1 drop-shadow-lg rounded-lg">
+							<a href="/tat-ca-goi-xet-nghiem"
+								class=" text-nowrap text-slate-600 w-full text-sm font-medium hover:bg-blue-600 hover:text-white px-4 py-3 duration-200 rounded-lg">
+								Tất
+								cả gói xét nghiệm</a>
+							<a href="/goi-xet-nghiem-tong-quat"
+								class="text-nowrap text-slate-600 text-sm w-full font-medium hover:bg-blue-600 hover:text-white px-4  rounded-lg py-3 duration-200">
+								Gói xét nghiệm tổng quát
+							</a>
+							<a href="/goi-xet-nghiem-nipt"
+								class="text-slate-600 text-nowrap text-sm w-full font-medium hover:bg-blue-600 hover:text-white px-4  rounded-lg py-3 duration-200">
+								Gói xét nghiệm NIPT
+							</a>
+							<a href="/goi-xet-nghiem-vi-chat"
+								class="text-slate-600 text-nowrap text-sm w-full font-medium hover:bg-blue-600 hover:text-white px-4 rounded-lg py-3 duration-200">
+								Gói xét nghiệm vi chất
+							</a>
+							<a href="/goi-xet-nghiem-tim-mach"
+								class="text-slate-600 text-nowrap text-sm w-full font-medium hover:bg-blue-600 hover:text-white px-4 rounded-lg py-3 duration-200">
+								Gói
+								xét nghiệm tim mạch</a>
+							<a href="/goi-xet-nghiem-adn-huyet-thong"
+								class="text-slate-600 text-nowrap text-sm w-full font-medium hover:bg-blue-600 hover:text-white px-4 rounded-lg py-3 duration-200">
+								Gói
+								xét nghiệm ADN huyết thống</a>
+							<a href="/goi-xet-nghiem-tien-hon-nhan"
+								class="text-slate-600 text-nowrap text-sm w-full font-medium hover:bg-blue-600 hover:text-white px-4 rounded-lg py-3 duration-200">
+								Gói
+								xét nghiệm tiền hôn nhân</a>
+						</div>
+					</div>
+				</div>
+				<a href="/ve-medlab-vinh-vien" class="@(currentUrl == "/ve-medlab-vinh-vien" ? "text-white bg-blue-600" : "text-slate-500") text-lg hover:bg-blue-600 hover:text-white
+					duration-200 px-2 py-1 rounded-lg font-medium font-sans">VỀ
+					CHÚNG TÔI</a>
+				<a href=" /tin-tuc" class="@(currentUrl == "/tin-tuc" ? "text-white bg-blue-600" : "text-slate-500") text-lg hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg
+					font-medium font-sans">
+					TIN TỨC
+				</a>
+				<a href="/tu-van" class="@(currentUrl == "/tu-van" ? "text-white bg-blue-600" : "text-slate-500") text-lg hover:bg-blue-600 hover:text-white duration-200 px-2 py-1 rounded-lg font-medium
+					font-sans">
+					TƯ VẤN
+				</a>
+			</div>
+			<div>
+				<a href="/tu-van" class="hidden lg:block px-4 py-1.5 text-lg rounded-md text-white bg-blue-600">
+					ĐĂNG KÝ TƯ VẤN
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		tippy('#tippy-trigger', {
+			content: document.querySelector('#tippy-content').innerHTML,
+			allowHTML: true,
+			interactive: true,
+			placement: 'bottom',
+			theme: 'custom',
+			arrow: false,
+			trigger: 'mouseenter focus',
+			animation: 'scale',
+			delay: [0, 500]
+		});
+	});
+
+	document.addEventListener("DOMContentLoaded", function () {
+		let top = document.getElementById("top-header")
+		let bottom = document.getElementById("bottom-header")
+		console.log(top, bottom)
+
+		function toggleHeaderOnScroll() {
+			let currentY = window.scrollY;
+
+			if (currentY > 30) {
+				top.classList.remove("translate-y-0", "border-b-[0.5px]", "border-slate-200")
+				top.classList.add("-translate-y-full")
+				bottom.classList.remove("md:mt-0")
+				bottom.classList.add("mt-0", "md:-mt-28")
+			} else {
+				top.classList.add("translate-y-0", "border-b-[0.5px]", "border-slate-200")
+				top.classList.remove("-translate-y-full")
+				bottom.classList.add("md:mt-0")
+				bottom.classList.remove("mt-0", "md:-mt-28")
+			}
+		}
+
+		window.addEventListener("scroll", toggleHeaderOnScroll);
+	})
+</script>

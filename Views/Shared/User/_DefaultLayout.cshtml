@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+@await Html.PartialAsync("_Head")
+
+<body>
+	<div class="bg-slate-100/30 relative">
+		<partial name="_Header.cshtml" />
+		<div class="wrapper flex">
+			<div class="content w-full mt-20 md:mt-28 px-4 md:px-0">
+				@RenderBody()
+				<div class="mt-12 md:mt-32">
+					<partial name="_Footer.cshtml" />
+				</div>
+			</div>
+		</div>
+		<div id="scrollTop" class="md:opacity-0 duration-300 right-8 bottom-8">
+			<button class="text-3xl" id="scrollToTopButton">
+				<i class="fas fa-arrow-alt-circle-up text-pink-600"></i>
+			</button>
+		</div>
+
+		<div class="hidden md:block md:fixed right-8 top-1/2 -translate-y-1/2">
+			<div class="flex flex-col gap-8 items-center">
+				<a href="https://www.facebook.com/vinhvien.medlab/" target="_blank" class="relative">
+					<img src="~/img/facebook.png" alt="facebook contact"
+						class="absolute z-10 w-12 h-12 rounded-full object-cover" />
+					<p class="w-12 h-12 rounded-full bg-blue-700 animate-ping delay-150 ease-in-out"></p>
+				</a>
+				<a href="tel:+0909636293" class="relative">
+					<img src="~/img/phone.png" alt="phone contact"
+						class="absolute z-10 w-12 h-12 rounded-full object-cover" />
+					<p class="w-12 h-12 rounded-full bg-sky-600 animate-ping"></p>
+				</a>
+				<div class="relative">
+					<img src="~/img/zalo.png" alt="zalo contact"
+						class="absolute z-10 w-12 h-12 rounded-full object-cover" />
+					<p class="w-12 h-12 rounded-full bg-blue-800 animate-ping"></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="fixed md:hidden bottom-0 left-0 right-0">
+			<div class="grid grid-cols-4 bg-white/80 backdrop-blur-2xl w-full">
+				<a href="" class="p-4 flex items-center justify-center">
+					<img src="~/img/zalo.png" alt="zalo contact" class="w-10 h-10" />
+				</a>
+				<a href="tel:+0909636293" class="p-4 flex items-center justify-center">
+					<img src="~/img/phone.png" alt="zalo contact" class="w-10 h-10" />
+				</a>
+				<a href="https://www.facebook.com/vinhvien.medlab/" target="_blank"
+					class="p-4 flex items-center justify-center">
+					<img src="~/img/facebook.png" alt="zalo contact" class="w-10 h-10" />
+				</a>
+				<div class="p-4 flex gap-2 items-center justify-center">
+					<p class="text-nowrap font-medium text-sky-600">TRA CỨU</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	@await Html.PartialAsync("_Scripts")
+	<script>
+		const scrollToTop = () => {
+			window.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			let scroll = document.getElementById("scrollTop")
+
+			function toggleHeaderOnScrollTop() {
+				if (window.scrollY > 300) {
+					scroll.classList.remove("md:opacity-0")
+					scroll.classList.add("md:fixed", "md:opacity-85")
+				} else {
+					scroll.classList.add("md:opacity-0")
+					scroll.classList.remove("md:fixed", "md:opacity-85")
+				}
+			}
+
+			window.addEventListener("scroll", toggleHeaderOnScrollTop);
+		})
+
+		document.getElementById("scrollToTopButton").addEventListener("click", scrollToTop)
+	</script>
+</body>
+
+</html>

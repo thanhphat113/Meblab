@@ -1,0 +1,96 @@
+<div class="mt-8 md:px-8 lg:px-0 lg:mx-32 md:mt-20">
+    @* {/*Banner section*/} *@
+    <div class="grid grid-cols-2 gap-8">
+        <div class="max-md:col-span-2">
+            <h1 class="text-slate-800 text-3xl font-bold">GÓI XÉT NGHIỆM TIM MẠCH</h1>
+            <div class="flex flex-col gap-2 text-lg mt-6">
+                <p class="flex items-start gap-2">
+                    <i class="fas fa-shield-alt flex-shrink-0 text-xl" style="color: #17a34a;"></i>
+                    Đánh giá sức khỏe tim mạch giúp phát hiện vấn đề tiềm ẩn.
+                </p>
+                <p class="flex items-start gap-2">
+                    <i class="fas fa-shield-alt flex-shrink-0 text-xl" style="color: #17a34a;"></i>
+                    Giúp dự báo nguy cơ xơ vữa động mạch, nhồi máu cơ tim, suy tim, đột quỵ.
+                </p>
+                <p class="flex items-start gap-2">
+                    <i class="fas fa-shield-alt flex-shrink-0 text-xl" style="color: #17a34a;"></i>
+                    Giảm thiểu nguy cơ tử vong do bệnh tim mạch.
+                </p>
+                <p class="flex items-start gap-2">
+                    <i class="fas fa-shield-alt flex-shrink-0 text-xl" style="color: #17a34a;"></i>
+                    Theo dõi và kiểm soát hiệu quả điều trị bệnh tim mạch.
+                </p>
+                <p class="flex items-start gap-2">
+                    <i class="fas fa-shield-alt flex-shrink-0 text-xl" style="color: #17a34a;"></i>
+                    Tùy chỉnh xét nghiệm theo nhu cầu cụ thể.
+                </p>
+                <div class="max-md:col-span-2">
+                    <button class="mt-4 bg-blue-500 text-white font-medium px-6 py-2 rounded-lg">Tư vấn
+                        miễn
+                        phí
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="banner max-md:col-span-2">
+            <img src="~/img/banner-timmach.jpg" alt="hinh anh xet nghiem tong quat"
+                class="h-full object-cover rounded-md" />
+        </div>
+    </div>
+
+    @* {/*FAQ section*/} *@
+    <div class="flex flex-col gap-2 mt-12 md:mt-20">
+        <div class="accordion-item bg-blue-300/30 rounded-lg p-6">
+            <div class="flex items-center justify-between gap-3">
+                <p class="text-black font-medium text-lg md:text-2xl">
+                    Những ai nên thực hiện xét nghiệm
+                </p>
+                <i class="accordion-icon fas fa-plus text-blue-800 text-lg"></i>
+            </div>
+            <div class="accordion-content transition-all content-accordion overflow-hidden max-h-0 opacity-0">
+                <ul class="list-none flex flex-col gap-2 text-xl">
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-600 flex-shrink-0"></i>
+                        Người cao tuổi
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-600 flex-shrink-0"></i>
+                        Người bị cao huyết áp, mỡ máu cao
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-600 flex-shrink-0"></i>
+                        Tiền sử gia đình mắc bệnh tim mạch
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-600 flex-shrink-0"></i>
+                        Người mắc bệnh đái tháo đường, thừa cân, béo phì, ít vận động
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-600 flex-shrink-0"></i>
+                        Người có thói quen uống nhiều rượu bia và hút thuốc
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion-item bg-blue-300/30 rounded-lg p-6">
+            <div class="flex items-center justify-between gap-3">
+                <p class="text-black font-medium text-lg md:text-2xl">
+                    Mục đích xét nghiệm tim mạch
+                </p>
+                <i class="accordion-icon fas fa-plus text-blue-800 text-lg"></i>
+            </div>
+            <div class="accordion-content transition-all content-accordion overflow-hidden max-h-0 opacity-0" }`}>
+                <p class="text-xl leading-8">
+                    Tầm soát các yếu tố nguy cơ và dấu hiệu bệnh tim, giúp can thiệp kịp thời, ngăn ngừa
+                    biến chứng nghiêm trọng và theo dõi tình trạng tim mạch của người bệnh để bảo vệ sức
+                    khỏe lâu dài.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* {/*All package section*/} *@
+<partial name="~/Views/AllTestingPackage/index.cshtml" />
+
+<script src="~/js/DropdownTestingTips.js"></script>

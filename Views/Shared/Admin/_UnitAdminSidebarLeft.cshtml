@@ -1,0 +1,18 @@
+@{
+	var currentUrl = Context.Request.Path.ToString().ToLower();
+}
+
+<aside class="sticky top-[61px] flex flex-col drop-shadow-md box-border" style="height: calc(100vh - 61px);">
+	<div class="flex flex-col justify-between gap-8 md:gap-0 flex-1 pt-5 px-5 pb-4 border-r-[1px] border-gray-400/30">
+		<nav class="-mx-3 space-y-3 max-sm:flex max-sm:flex-col max-sm:gap-4">
+			<a href="/1/admin/danh-sach-benh-nhan"
+				class="@(currentUrl.Equals("/1/admin/danh-sach-benh-nhan") ? "bg-gray-200 before:absolute before:right-[-9px] before:h-8 before:w-[2px] before:bg-bluePrimary" : "") flex items-center justify-center md:px-3 md:py-2 text-gray-600 transition-color rounded-lg relative">
+				<i class="text-2xl text-gray-600 fas fa-users"></i>
+			</a>
+			<a href="/1/admin/doi-mat-khau"
+				class="@(currentUrl.Equals("/1/admin/doi-mat-khau") ? "bg-gray-200 before:absolute before:right-[-9px] before:h-8 before:w-[2px] before:bg-bluePrimary" : "") flex items-center justify-center md:px-3 md:py-2 text-gray-600 transition-color rounded-lg relative">
+				<i class="text-2xl text-gray-600 fas fa-key"></i>
+			</a>
+		</nav>
+	</div>
+</aside>

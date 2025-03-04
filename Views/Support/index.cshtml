@@ -1,0 +1,43 @@
+<div class="md:px-8 lg:px-0 lg:mx-32 md:mt-20">
+    @* {/*Contact section*/} *@
+    <div class="mt-12 md:mt-16 md:px-8 lg:px-0 lg:mx-32">
+        <div class="">
+            <div class="grid grid-cols-3 p-4 mx-auto md:px-8 md:py-20 bg-slate-100 rounded-md">
+                <div class="col-span-3 md:col-span-2 px-20">
+                    <h2 class="text-slate-800 text-xl font-medium">Bạn cần hỗ trợ?</h2>
+                    <p class="text-slate-600 leading-5 text-sm mt-2">Medlab rất hân hạnh được hỗ trợ bạn,
+                        hãy để lại thông tin cho chúng tôi nhé. Yêu cầu của bạn sẽ được xử lý và phản hồi trong
+                        thời gian sớm nhất.</p>
+                    <form class="grid grid-cols-2 gap-2 mt-6">
+                        <div class="col-span-2 md:col-span-1 flex flex-col gap-2">
+                            <h3 class="text-slate-800">Họ và tên:</h3>
+                            <input type="text" name="Name" placeholder="Nhập tên"
+                                class="col-span-2 sm:col-span-1 px-4 py-1 placeholder:text-base placeholder:font-light placeholder:font-sans placeholder:text-slate-600 ring-1 ring-slate-300 rounded-md" />
+                        </div>
+                        <div class="col-span-2 md:col-span-1 flex flex-col gap-2">
+                            <h3 class="text-slate-800">Số điện thoại:</h3>
+                            <input type="text" name="Phone" placeholder="Nhập số điện thoại"
+                                class="col-span-2 sm:col-span-1 px-4 py-1 placeholder:text-base placeholder:font-light placeholder:font-sans placeholder:text-slate-600 ring-1 ring-slate-300 rounded-md" />
+                        </div>
+                        <div class="flex flex-col gap-1 col-span-2 md:mt-4">
+                            <h3 class="text-slate-800">Email:</h3>
+                            <input type="email" name="Email" placeholder="Nhập email liên hệ"
+                                class="col-span-2 px-4 py-1 placeholder:text-base placeholder:font-light placeholder:font-sans placeholder:text-slate-600 ring-1 ring-slate-300 rounded-md" />
+                        </div>
+                        <input type="submit" value="GỬI"
+                            class="col-span-2 cursor-pointer hover:shadow-[0_0_10px_rgba(0,0,0,0.3)] mt-2 bg-blue-600 rounded-lg text-white px-12 py-1.5" />
+
+                        @if (ViewData["Message"] != null)
+                        {
+                            <p style="color: @(ViewData["Message"].ToString().Contains("thành công") ? "green" : "red")">
+                                @ViewData["Message"]
+                            </p>
+                        }
+                    </form>
+                </div>
+                <img src="~/img/contact.png" alt="" class="hidden md:block w-52 h-full mx-auto object-cover " />
+
+            </div>
+        </div>
+    </div>
+</div>

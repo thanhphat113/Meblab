@@ -1,0 +1,105 @@
+@model List<Medlab.DTO.ServiceDTO>;
+
+<section class="md:px-8 lg:px-0 lg:mx-32 md:mt-20">
+    <div class="flex items-center justify-between">
+        <div>
+            <p class="hidden md:inline mt-1 text-base sm:text-lg md:text-lg text-gray-500 dark:text-gray-300">Bảng
+                giá tất cả dịch vụ
+                của Medlab</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <div class="relative">
+                <input
+                    class="px-2 py-1 md:px-4 md:py-1 ring-1 ring-slate-200 rounded-lg w-48 sm:w-56 md:max-w-80 placeholder:text-sm"
+                    type="text" placeholder="Nhập dịch vụ cần tìm" />
+                <p class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                    <IoIosSearch class="text-slate-500 text-lg md:text-2xl" />
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col mt-6">
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                <div class="overflow-scroll border border-gray-200 dark:border-gray-700 md:rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                        <thead class="bg-sky-600 dark:bg-gray-800">
+                            <tr>
+                                <th scope="col"
+                                    class="py-3.5 px-4 text-sm font-medium flex items-center justify-center text-white dark:text-gray-400">
+                                    <button class="flex items-center gap-x-3 focus:outline-none">
+                                        <span class="text-sm md:text-base text-nowrap">Tên dịch vụ</span>
+
+                                        <svg class="h-3" viewBox="0 0 10 11" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.13347 0.0999756H2.98516L5.01902 4.79058H3.86226L3.45549 3.79907H1.63772L1.24366 4.79058H0.0996094L2.13347 0.0999756ZM2.54025 1.46012L1.96822 2.92196H3.11227L2.54025 1.46012Z"
+                                                fill="currentColor" stroke="currentColor" stroke-width="0.1" />
+                                            <path
+                                                d="M0.722656 9.60832L3.09974 6.78633H0.811638V5.87109H4.35819V6.78633L2.01925 9.60832H4.43446V10.5617H0.722656V9.60832Z"
+                                                fill="currentColor" stroke="currentColor" stroke-width="0.1" />
+                                            <path
+                                                d="M8.45558 7.25664V7.40664H8.60558H9.66065C9.72481 7.40664 9.74667 7.42274 9.75141 7.42691C9.75148 7.42808 9.75146 7.42993 9.75116 7.43262C9.75001 7.44265 9.74458 7.46304 9.72525 7.49314C9.72522 7.4932 9.72518 7.49326 9.72514 7.49332L7.86959 10.3529L7.86924 10.3534C7.83227 10.4109 7.79863 10.418 7.78568 10.418C7.77272 10.418 7.73908 10.4109 7.70211 10.3534L7.70177 10.3529L5.84621 7.49332C5.84617 7.49325 5.84612 7.49318 5.84608 7.49311C5.82677 7.46302 5.82135 7.44264 5.8202 7.43262C5.81989 7.42993 5.81987 7.42808 5.81994 7.42691C5.82469 7.42274 5.84655 7.40664 5.91071 7.40664H6.96578H7.11578V7.25664V0.633865C7.11578 0.42434 7.29014 0.249976 7.49967 0.249976H8.07169C8.28121 0.249976 8.45558 0.42434 8.45558 0.633865V7.25664Z"
+                                                fill="currentColor" stroke="currentColor" stroke-width="0.3" />
+                                        </svg>
+                                    </button>
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-2 md:px-12 md:py-3.5 text-sm md:text-base font-medium text-center rtl:text-right text-white text-nowrap">
+                                    Tên nhóm
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm md:text-base font-medium text-center rtl:text-right text-white text-nowrap">
+                                    Đơn vị
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm md:text-base font-medium text-center rtl:text-right text-white text-nowrap">
+                                    Trạng thái
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                            @foreach (var item in Model)
+                            {
+                                <tr class="even:bg-slate-100 dark:bg-gray-900">
+                                    <td class="px-4 p-4 text-sm font-medium whitespace-nowrap text-center">
+                                        <div>
+                                            <h2
+                                                class=" overflow-hidden text-ellipsis font-medium text-gray-600 dark:text-white text-sm">
+                                                @item.ServiceName</h2>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="px-4 py-2 md:px-12 md:py-4 text-sm font-medium whitespace-nowrap text-center">
+                                        <div class="">
+                                            <h2 class="font-medium text-gray-600 dark:text-white text-sm">
+                                                @item.ServiceGroup</h2>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 p-4 text-sm whitespace-nowrap text-center">
+                                        <div class="">
+                                            <h2 class="font-medium text-gray-600 dark:text-white text-sm">
+                                                @item.ServiceUnit</h2>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 p-4 text-sm font-medium whitespace-nowrap text-center">
+                                        <div
+                                            class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+                                            Đang cung cấp
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

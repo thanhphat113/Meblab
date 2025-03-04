@@ -1,0 +1,11 @@
+.tippy-box[data-theme~='custom'] {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Xóa viền container của nội dung tooltip */
+.tippy-content {
+    padding: 0 !important;
+}

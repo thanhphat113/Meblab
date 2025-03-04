@@ -1,0 +1,213 @@
+@* import { useEffect, useState } from 'react';
+// Core viewer
+import { Viewer } from '@react-pdf-viewer/core';
+import { Worker } from '@react-pdf-viewer/core';
+
+// Plugins
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+
+// Import styles
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import BlogTable from '../components/Table/BlogTable';
+import Skeleton from 'react-loading-skeleton';
+import CourseTable from '../components/Table/BlogTable';
+import PatientTable from '../components/Table/PatientTable';
+import axios from 'axios';
+import formateDDMMYYYY from '../helper/formateDDMMYYYY';
+import ResultPDFModal from '../components/Modal/ResultPDFModal';
+import { FaFilePdf } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
+
+
+function UnitAdminListPatients() {
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const [numPages, setNumPages] = useState();
+    const [pageNumber, setPageNumber] = useState(1);
+    const [date, setDate] = useState();
+    const [daysHaveResult, setDaysHaveResult] = useState([]);
+    const [patients, setPatients] = useState();
+    const [daySelected, setDaySelected] = useState();
+    const [results, setResults] = useState();
+    const [isShowResultModal, setIsShowResultModal] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const getDaysHaveResult = async () => {
+
+            try {
+                const token = localStorage.getItem("token");
+                console.log(token);
+                const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/lay-dsngaykq`,{}, {
+                    headers: {
+                        Authorization : `Bearer ${token}`
+                    }
+                })
+                setDaysHaveResult(response.data);
+            }
+            catch (e) {
+                console.log(e);
+            }
+        }
+
+        getDaysHaveResult();
+    }, [])
+
+    useEffect(() => {
+        if (daysHaveResult.length > 0) {
+            getPatientsByDay(daysHaveResult[0])
+        } else{
+            return;
+        }
+
+    }, [daysHaveResult])
+
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
+
+    const handleOnChange = async (e) => {
+        try {
+            const token = localStorage.getItem("token");
+            console.log(token);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/lay-dsbn-theo-ngay?ngayKetQua=${e.target.value}`,{},{
+                                headers: {
+                                    Authorization : `Bearer ${token}`
+                                }
+                            })
+            setPatients(response.data)
+            console.log(e.target.value);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+
+    const getPatientsByDay = async (day) => {
+        setPatients(null)
+        try {
+            const token = localStorage.getItem("token");
+            console.log(token);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/lay-dsbn-theo-ngay?ngayKetQua=${day}`,{},{
+                                headers: {
+                                    Authorization : `Bearer ${token}`
+                                }
+                            })
+            setPatients(response.data)
+            setDaySelected(day)
+            console.log(day);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    const handleShowResult = async (patient) => {
+        try {
+            const token = localStorage.getItem('token');
+            console.log(token);
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/tra-cuu-ket-qua-bn?ngayKetQua=${daySelected}&idbenhNhan=${patient.id}`, {},{
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                responseType: 'blob',
+            });
+
+            const blog = new Blob([response.data], {type: "application/pdf"});
+            const fileUrl = URL.createObjectURL(blog);
+            setResults(fileUrl);
+            toggleIsShowResultModal()
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    const toggleIsShowResultModal = () => {
+        setIsShowResultModal(!isShowResultModal);
+    }
+
+    const handleExportPDF = async () => {
+        try {
+            const token = localStorage.getItem("token");
+            const response = await axios.post(`${process.env.REACT_APP_BACKEND_API}/api/TraCuuKetQua/doi-tac/xuat-dskq-theo-ngay?ngayKetQua=${daySelected}`, {},{
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                responseType: 'blob',
+            });
+
+            const blob = new Blob([response.data], {type: "application/pdf"});
+            const fileurl = URL.createObjectURL(blob);
+
+            console.log(fileurl);
+
+            window.open(`${fileurl}`, '_blank');
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+
+    return (
+        <> *@
+<div className="home-page-wrapper bg-white px-5 py-4">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div>
+            <div className="flex items-center gap-x-3">
+                <h2 className="text-lg font-medium text-gray-800">Danh sách bệnh nhân</h2>
+            </div>
+
+            <p className="mt-1 text-sm text-gray-500">Danh sách tất cả bệnh nhân của đơn vị</p>
+        </div>
+
+        <button onClick={handleExportPDF}
+            className="flex w-full items-baseline text-nowrap justify-center px-6 pt-2 pb-1.5 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600">
+            <FaFilePdf />
+            Xuất PDF
+        </button>
+    </div>
+
+    <h3 className="mt-6 text-sm font-medium text-slate-800">Các ngày có kết quả</h3>
+
+    <div className="mt-2 md:flex md:gap-1 md:items-center md:justify-between drop-shadow-md">
+        <div className="inline-flex overflow-hidden bg-white border divide-x rounded-lg rtl:flex-row-reverse">
+            {daysHaveResult && (
+            daysHaveResult.map((day, index) => (
+            <button key={index} className={`${daySelected===day ? 'bg-slate-200' : '' } px-5 py-2 text-xs font-medium
+                text-gray-600 transition-colors duration-200 sm:text-sm`} onClick={()=> getPatientsByDay(day)}
+                >
+                {formateDDMMYYYY(day)}
+            </button>
+            ))
+            )}
+        </div>
+
+        <div className="relative flex items-center mt-4 md:mt-0">
+            <input onChange={handleOnChange} name="date" type="date" placeholder="Tìm tin tức"
+                className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-4 rtl:pr-11  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+        </div>
+    </div>
+
+
+    <div className="table max-w-full flex flex-col w-full mt-6 drop-shadow-md">
+        {patients ? (
+        <PatientTable headers={['Mã bệnh nhân', 'Tên bệnh nhân' , 'Năm sinh' , 'Địa chỉ' , 'Số điện thoại' , '' ]}
+            data={patients} handleShowResult={handleShowResult} />
+        ) : (
+        <div className="flex flex-col gap-1">
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+            <Skeleton className="w-full h-20" />
+        </div>
+        )}
+    </div>
+</div>
+{isShowResultModal && (
+<ResultPDFModal results={results} handleShowResult={handleShowResult}
+    toggleIsShowResultModal={toggleIsShowResultModal} />
+)}

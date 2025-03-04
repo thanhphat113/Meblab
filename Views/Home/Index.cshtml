@@ -1,0 +1,484 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="w-full relative h-[300px] md:h-[600px] rounded-2xl bg-cover lg:bg-cover bg-top"
+    style=" background-image: url('@Url.Content("~/img/background-1.jpg")'); background-repeat: no-repeat; aspect-ratio: 16/9;">
+    <div class="grid md:grid-cols-2 grid-cols-3 p-6 md:p-8 h-full">
+        <div class="flex flex-col gap-2 md:gap-6 col-span-2 md:col-span-1 md:mt-24">
+            <div class="title">
+                <h1
+                    class="font-bold text-blue-600 max-h-[110px] md:max-h-screen text-2xl md:text-4xl lg:text-5xl leading-7 md:leading-[40px] lg:leading-[50px] xl:leading-[50px] text-left tracking-wide">
+                    Xét
+                    nghiệm chính xác, sức khoẻ an tâm
+                </h1>
+                <p class="hidden md:block text-slate-600 text-sm md:text-base mt-4 overflow-hidden">
+                    Medlab tự hào là trung tâm xét nghiệm hàng đầu, cung cấp dịch vụ chính xác, nhanh
+                    chóng
+                    với đội ngũ
+                    chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại.
+                </p>
+                <p class="block md:hidden text-slate-600 text-sm mt-6">
+                    Medlab tự hào là một trong top trung tâm xét nghiệm nhanh, chính xác.
+                </p>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:flex items-center gap-1 bg-blue-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-nowrap md:text-lg rounded-md text-[14px]">
+                    Đặt lịch xét nghiệm
+                </button>
+                <button class="hidden md:flex items-center gap-2 text-sm text-nowrap">
+                    Tìm hiểu thêm
+                    <FaArrowRightLong class="text-xs" />
+                </button>
+            </div>
+            <div class="search-mobile">
+                <button
+                    class="flex md:hidden items-center gap-1 bg-blue-600 px-2 py-1 md:px-3 md:py-1 lg:px-4 lg:py-1 text-white text-nowrap md:text-lg rounded-md text-[14px]">
+                    <MdOutlineSearch />
+                    Tra cứu kết quả xét nghiệm
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div
+        class="absolute left-8 bottom-0 hidden md:flex items-center gap-x-8 px-8 py-4 bg-yellow-300/60 outline outline-8 outline-white rounded-2xl before:w-[25px] before:h-[25px] before:absolute before:bottom-0 before:left-[-33px] before:shadow-curve-br before:rounded-2xl after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[33px] after:rounded-2xl after:absolute after:shadow-curve-bl">
+        <div class="flex flex-col items-center gap-2">
+            <p class="text-xs md:text-3xl text-nowrap text-blue-500">35.5N</p>
+            <p class="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Khách
+                hàng</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+            <p class="text-xs md:text-3xl text-nowrap text-blue-500">120.5N</p>
+            <p class="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Lượt xét
+                nghiệm</p>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+            <p class="text-xs md:text-3xl text-nowrap text-blue-500">+30</p>
+            <p class="text-blue-500 text-xs md:text-sm tracking-wide text-nowrap">Đối tác</p>
+        </div>
+    </div>
+</div>
+
+<div class="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
+    <div class="">
+        <h1 class="text-lg md:text-2xl font-semibold leading-1 font-sans">Quy trình
+            <span class="underline underline-offset-8 decoration-2 decoration-yellow-400"> Xét nghiệm</span>
+        </h1>
+    </div>
+
+    <div class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-4 sm:gap-8 md:gap-12 mt-4 md:mt-6">
+        <div class="rounded-md">
+            <div class="grid grid-cols-4 sm:grid-cols-3 h-full">
+                <div class="col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pl-0 h-full">
+                    <h1 class="text-sm md:text-lg bg-blue-100 px-2 py-1 rounded-lg">Bước 1: Đăng
+                        ký <span class="hidden sm:inline">thông
+                            tin</span></h1>
+                    <p class="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh
+                        nhân cung cấp thông tin cá
+                        nhân và lịch sử
+                        bệnh tại quầy tiếp nhận hoặc đăng ký ngay trên website.</p>
+                </div>
+                <div class="relative">
+                    <img src="~/img/med-registration.png" alt="bước 1"
+                        class="absolute bottom-8 sm:bottom-0 md:bottom-0 right-0 w-16 sm:w-20 md:w-24" />
+                </div>
+            </div>
+        </div>
+        <div class="rounded-md">
+            <div class="grid grid-cols-4 sm:grid-cols-3 h-full">
+                <div class="hidden md:block col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pr-0 h-full">
+                    <h1 class="text-sm md:text-lg bg-yellow-100 px-2 py-1 rounded-lg">Bước 2: Tiếp
+                        nhận</h1>
+                    <p class="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Nhân viên tiếp
+                        nhận thông tin, kiểm tra giấy tờ và sắp xếp lịch khám hoặc xét nghiệm, sau đó thông
+                        báo ngày giờ cho bệnh nhân.</p>
+                </div>
+                <div class="relative">
+                    <img src="~/img/med-waiting.png" alt="bước 2"
+                        class="absolute bottom-8 sm:bottom-0 md:bottom-0 left-0 md:left-auto md:right-0 w-16 sm:w-20 md:w-24" />
+                </div>
+                <div class="block md:hidden col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pr-0 h-full">
+                    <h1 class="text-sm md:text-lg bg-sky-100 px-2 py-1 rounded-lg">Bước 2: Tiếp
+                        nhận</h1>
+                    <p class="text-slate-800 text-xs md:text-base mt-2 tracking-wide">Nhân viên tiếp
+                        nhận thông tin, kiểm tra giấy tờ và sắp xếp lịch khám hoặc xét nghiệm, sau đó thông
+                        báo ngày giờ cho bệnh nhân.</p>
+                </div>
+            </div>
+        </div>
+        <div class="rounded-md">
+            <div class="grid grid-cols-4 sm:grid-cols-3 h-full">
+                <div class="col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pl-0 h-full">
+                    <h1 class="text-sm md:text-lg bg-yellow-100 px-2 py-1 rounded-lg">Bước 3: Xét
+                        nghiệm</h1>
+                    <p class="text-slate-800 text-xs md:text-base mt-2 tracking-wide">Bệnh nhân đến
+                        theo lịch hẹn, thực hiện xét nghiệm dưới sự hướng dẫn chi tiết của nhân viên y
+                        tế.</p>
+                </div>
+                <div class="relative">
+                    <img src="~/img/med-process.png" alt="bước 3"
+                        class="absolute bottom-8 sm:bottom-0 md:bottom-0 right-0 w-16 sm:w-20 md:w-24" />
+                </div>
+            </div>
+        </div>
+        <div class="rounded-md">
+            <div class="grid grid-cols-4 sm:grid-cols-3 h-full">
+                <div class="hidden md:block col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 h-full">
+                    <h1 class="text-sm md:text-lg bg-sky-100 px-2 py-1 rounded-lg">Bước 4: Tra cứu kết
+                        quả</h1>
+                    <p class="text-slate-800 text-xs md:text-base  mt-2 tracking-wide">Bệnh nhân nhận
+                        kết quả tại bệnh viện hoặc tra cứu trực tuyến, bác sĩ sẽ giải thích và tư vấn điều
+                        trị nếu cần</p>
+                </div>
+                <div class="relative">
+                    <img src="~/img/med-search.png" alt="bước 4"
+                        class="absolute bottom-8 sm:bottom-0 md:bottom-0 left-0 md:left-auto md:right-0 w-16 sm:w-20 md:w-24" />
+                </div>
+                <div class="block md:hidden col-span-3 sm:col-span-2 bg-white rounded-xl p-4 sm:px-0 pr-0 h-full">
+                    <h1 class="text-sm md:text-lg bg-sky-100 px-2 py-1 rounded-lg">Bước 4: Tra cứu kết
+                        quả</h1>
+                    <p class="text-slate-800 text-xs md:text-base mt-2 tracking-wide">Bệnh nhân nhận
+                        kết quả tại bệnh viện hoặc tra cứu trực tuyến, bác sĩ sẽ giải thích và tư vấn điều
+                        trị nếu cần</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
+    <div class="">
+        <p class="text-sky-500 text-sm md:text-lg mx-auto font-sans">Dịch Vụ</p>
+        <p class="text-slate-800 text-lg md:text-2xl font-semibold font-sans mx-auto mt-2">Doanh
+            mục <span class="underline underline-offset-8 decoration-2 decoration-sky-500">Xét nghiệm</span> của
+            Medlab</p>
+    </div>
+    <div class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-8 xl:grid-cols-9 gap-4 mt-6 md:mt-8">
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/huyethoc.png" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:textsmm text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Huyết
+                học</p>
+        </div>
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/sinh-hoa-mien-dich.png" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Sinh
+                hoá - Miễn dịch</p>
+        </div>
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/sinh-hoa.jpg" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Sinh
+                hoá</p>
+        </div>
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/nuoc-tieu.png" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Nước
+                tiểu</p>
+        </div>
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/xet-nghiem-dich.png" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Xét
+                nghiệm dịch</p>
+        </div>
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/vi-trung.png" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Vi
+                trùng</p>
+        </div>
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/sinhhoc-phantu.jpg" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Sinh
+                học phân tử</p>
+        </div>
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/chuan-doan.png" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Chuẩn
+                đoán</p>
+        </div>
+        <div class="grid-item shadow-md p-2 rounded-2xl">
+            <img src="~/img/vi-sinh.png" alt="" class="w-16 sm:w-20 md:w-16 px-2 py-1 mx-auto" />
+            <p
+                class="text-sky-700 text-xs md:text-sm  text-center overflow-hidden text-ellipsis text-nowrap w-full mt-2">
+                Vi
+                sinh</p>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-between mt-6 md:mt-12">
+        <div class="text-sky-600 text-sm md:text-sm flex items-center gap-2">
+            Xem bảng giá dịch vụ
+            <TbCash />
+        </div>
+        <p class="hidden md:block text-slate-600 text-sm md:text-xs">Cập nhật 1 ngày trước</p>
+    </div>
+</div>
+
+<div class="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
+    <div class="flex items-center justify-between">
+        <p class="text-slate-800 text-xl md:text-2xl font-semibold font-sans">Các gói xét
+            nghiệm</p>
+        <a href="/tat-ca-goi-xet-nghiem" class="flex items-center gap-2 px-4 py-1 bg-blue-100 text-blue-600 rounded-lg">
+            <FaArrowRightLong />
+            Xem tất cả
+        </a>
+    </div>
+
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-2 mt-4 md:mt-6">
+        <a href="/goi-xet-nghiem-tong-quat" class="bg-blue-100 p-4 rounded-md grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="content sm:col-span-2 flex flex-col ">
+                <h2 class="text-base md:text-lg font-medium">Gói xét nghiệm tổng quát</h2>
+                <p class="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
+                    xét
+                    nghiệm tổng quát giúp kiểm tra sức khỏe toàn diện, bao gồm các xét nghiệm máu, nước tiểu
+                    và chỉ số sinh hóa. Kết quả hỗ trợ phát hiện sớm các bệnh lý tiềm ẩn.</p>
+            </div>
+            <img src="~/img/banner-tongquat.png" alt="Hình ảnh gói xét nghiệm tổng quát"
+                class="rounded-lg h-full object-cover" />
+        </a>
+        <a href="/goi-xet-nghiem-nipt" class="bg-blue-100 p-4 rounded-md grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="content sm:col-span-2 flex flex-col">
+                <h2 class="text-base md:text-lg font-medium">Gói xét nghiệm NIPT</h2>
+                <p class="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
+                    xét
+                    nghiệm NIPT giúp kiểm tra và phát hiện các rối loạn di truyền sớm trong thai kỳ, đảm bảo
+                    sức khỏe mẹ và bé.</p>
+            </div>
+            <img src="~/img/banner-nipt.jpg" alt="Hình ảnh gói xét nghiệm NIPT"
+                class="rounded-lg h-full object-cover" />
+        </a>
+        <a href="/goi-xet-nghiem-vi-chat" class="bg-blue-100 p-4 rounded-md grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="content sm:col-span-2 flex flex-col">
+                <h2 class="text-base md:text-lg font-medium">Gói xét nghiệm vi chất</h2>
+                <p class="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
+                    xét
+                    nghiệm vi chất giúp xác định sự thiếu hụt các vitamin và khoáng chất trong cơ thể, từ đó
+                    hỗ trợ điều chỉnh chế độ dinh dưỡng phù hợp.</p>
+            </div>
+            <img src="~/img/banner-vichat.png" alt="Hình ảnh gói xét nghiệm vi chất"
+                class="rounded-lg h-full object-cover" />
+        </a>
+        <a href="/goi-xet-nghiem-tim-mach" class="bg-blue-100 p-4 rounded-md grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="content sm:col-span-2 flex flex-col">
+                <h2 class="text-base md:text-lg font-medium">Gói xét nghiệm tim mạch</h2>
+                <p class="text-slate-600 text-sm md:text-base max-h-40 md:max-h-48 overflow-x-hidden mt-2">Gói
+                    xét
+                    nghiệm tim mạch cung cấp các thông tin quan trọng về chức năng tim và các yếu tố nguy
+                    cơ, giúp phát hiện sớm và phòng ngừa các bệnh lý tim mạch.</p>
+            </div>
+            <img src="~/img/banner-timmach.jpg" alt="Hình ảnh gói xét nghiệm tim mạch"
+                class="rounded-lg h-full object-cover" />
+        </a>
+    </div>
+</div>
+
+@* {/*Đối tượng xét nghiệm section*/} *@
+<div class="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
+    <p class="text-slate-800 text-xl md:text-2xl mx-auto font-semibold font-sans">Đối tượng xét
+        nghiệm</p>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-2 mt-4 md:mt-6">
+        <div class="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
+            <p class="text-base font-bold text-blue-100 mx-auto w-fit mt-4">MẸ BẦU</p>
+            <img src="~/img/mebau.png" alt=""
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[65px] md:w-2/3 lg:w-[50%]" />
+        </div>
+        <div class="relative h-40 md:h-52 lg:h-56 bg-blue-100 rounded-lg">
+            <p class="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TRẺ EM</p>
+            <img src="~/img/treem.png" alt=""
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/4 lg:w-[50%]" />
+        </div>
+        <div class="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
+            <p class="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NỮ GIỚI</p>
+            <img src="~/img/nugioi.png" alt=""
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[45%]" />
+        </div>
+        <div class="relative h-40 md:h-52 lg:h-56 bg-blue-100 rounded-lg">
+            <p class="text-base font-bold text-blue-500 mx-auto w-fit mt-4">TIỀN HÔN NHÂN</p>
+            <img src="~/img/tienhonnhan.png" alt=""
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[68px] md:w-3/5 lg:w-[45%]" />
+        </div>
+        <div class="relative h-40 md:h-52 lg:h-56 bg-blue-500 rounded-lg">
+            <p class="text-base font-bold text-blue-100 mx-auto w-fit mt-4">NAM GIỚI</p>
+            <img src="~/img/namgioi.png" alt=""
+                class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[81px] md:w-3/4 lg:w-[55%]" />
+        </div>
+    </div>
+</div>
+
+<div class="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
+    <div class="grid grid-cols-3 gap-2 md:gap-4">
+        <div class="col-span-3 md:col-span-1">
+            <h2 class="text-slate-800 text-xl md:text-2xl leading-snug font-sans font-medium">Khách
+                hàng nói gì về <span
+                    class="bg-clip-text text-transparent bg-gradient-to-br from-sky-900 to-sky-400 text-xl md:text-2xl">Medlab
+                    Vĩnh Viễn</span>
+            </h2>
+        </div>
+        <div class="col-span-3 md:col-span-2 grid grid-cols-2 gap-4 mt-2 md:mt-0">
+            <div class="bg-slate-100 p-2 md:p-4 rounded-lg ">
+                <div class="flex items-start justify-between gap-4">
+                    <p class="text-black text-sm">Khách hàng mới</p>
+                    <div class="flex items-center">
+                        <img class="object-cover w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                            alt="" />
+                        <img class="object-cover cover  w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                            alt="" />
+                        <img class="hidden lg:block  object-cover cover w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80"
+                            alt="" />
+                        <img class="hidden lg:block object-cover cover w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 border-2 border-white rounded-full dark:border-gray-700 shrink-0"
+                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                            alt="" />
+                        <p
+                            class="flex items-center justify-center cover  w-5 h-5 md:w-8 md:h-8 sm:w-10 sm:h-10 -mx-1 text-xs text-blue-600 bg-blue-100 border-2 border-white rounded-full">
+                            +4</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 mt-6 md:mt-12 items-end">
+                    <div class="w-full col-span-2">
+                        <p
+                            class="text-xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-yellow-500">
+                            91%</p>
+                        <p class="text-xs md:text-sm text-slate-600 font-medium">Khách hàng hài
+                            lòng</p>
+                    </div>
+
+                    <button class="hidden lg:flex text-nowrap text-xs items-center gap-2">
+                        Đặt lịch ngay
+                        <FaRegCircleCheck />
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-slate-100 rounded-lg overflow-hidden grid grid-rows-2">
+                <div
+                    class="border-b-[1px] bg-gradient-to-r p-2 md:p-4 w-full flex justify-center items-center from-green-400 to-blue-500 text-sm md:text-base lg:text-lg font-semibold text-transparent bg-clip-text text-nowrap">
+                    93%
+                    <p class="hidden md:block mx-1">khách hàng</p> hài lòng
+                </div>
+                <div
+                    class="bg-gradient-to-r from-yellow-400 to-yellow-600 w-full flex justify-center items-center text-sm md:text-base lg:text-lg text-nowrap font-semibold text-transparent bg-clip-text">
+                    85%
+                    <p class="hidden md:block mx-1">khách hàng</p> quay lại
+                </div>
+            </div>
+        </div>
+
+        <div></div>
+        <div class="col-span-3 md:col-span-2 bg-slate-100 p-4 rounded-lg">
+            <div class="flex flex-row gap-1">
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                            alt="avatar-customer" class="w-8 h-8 rounded-full object-cover" />
+                        <p class="flex items-center gap-2 text-slate-800 text-xs md:text-sm tracking-wide">
+                            Chị Mai, Bình Tân TP.HCM
+                            <Rating />
+                        </p>
+                    </div>
+                    <p class="text-slate-600 text-sm">3 giờ trước</p>
+                </div>
+            </div>
+            <div class="w-full mt-4 text-[14px]">
+                Dịch vụ tại đây rất tuyệt vời! Nhân viên chuyên nghiệp, nhiệt tình hướng dẫn, kết quả xét
+                nghiệm nhanh chóng và chính xác. Tôi sẽ tiếp tục tin tưởng lựa chọn.
+            </div>
+        </div>
+        <div></div>
+        <div class="col-span-3 md:col-span-2 bg-slate-100 p-4 rounded-lg">
+            <div class="flex flex-row gap-1">
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                            alt="avatar-customer" class="w-8 h-8 rounded-full object-cover" />
+                        <p class="flex items-center gap-2 text-slate-800 text-xs md:text-sm tracking-wide">
+                            Anh Hùng, Quận 1 TP.HCM
+                            <Rating />
+                        </p>
+                    </div>
+                    <p class="text-slate-600 text-sm">3 giờ trước</p>
+                </div>
+            </div>
+            <div class="w-full mt-4 text-[14px]">
+                Medlab thực sự đáng tin cậy. Đội ngũ nhân viên không chỉ thân thiện mà còn tư vấn rất chi
+                tiết, giúp tôi hiểu rõ hơn về tình trạng sức khỏe của mình
+            </div>
+        </div>
+        <div></div>
+        <div class="col-span-3 md:col-span-2 bg-slate-100 p-4 rounded-lg">
+            <div class="flex flex-row gap-1">
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80"
+                            alt="avatar-customer" class="w-8 h-8 rounded-full object-cover" />
+                        <p class="flex items-center gap-2 text-slate-800 text-xs md:text-sm tracking-wide">
+                            Chị Thảo, Quận 10 TP.HCM
+                            <Rating />
+                        </p>
+                    </div>
+                    <p class="text-slate-600 text-sm">3 giờ trước</p>
+                </div>
+            </div>
+            <div class="w-full mt-4 text-[14px]">
+                Tôi rất ấn tượng với cơ sở vật chất hiện đại và quy trình xét nghiệm nhanh gọn tại đây. Kết
+                quả trả đúng hẹn, không để khách hàng phải chờ đợi.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-12 md:mt-20 md:px-8 lg:px-0 lg:mx-32">
+    <div class="flex items-center justify-between">
+        <p class="text-slate-800 text-xl md:text-2xl font-semibold">Tin tức về y khoa</p>
+        <a to="/tin-tuc" class="flex items-center gap-2 px-4 py-1 bg-blue-100 text-blue-600 rounded-lg">
+            <FaArrowRightLong />
+            Xem tất cả
+        </a>
+    </div>
+    @* <div class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-2 mt-4 md:mt-6">
+            {blogs && blogs.length > 0 && (
+            blogs.map((blog, index) => (
+            <a to={`/blog/${blog.id}`} key={index}>
+                <div class="grid-item">
+                    <div class="relative">
+                        <img src={`${process.env.REACT_APP_ASP_NET_CORE_APP_URL}${blog.img}`} alt="hinh anh tin tuc"
+                            class="rounded-md h-40 w-full object-cover" />
+                        <div
+                            class="absolute px-2 py-1 bg-yellow-500 text-white border-white outline outline-offset-0 outline-4 outline-white text-[10px] rounded-md bottom-0 left-0 before:w-[25px] before:h-[25px] before:shadow-curve-bl-4px before:rounded-md before:absolute before:left-0 before:-top-[29px] after:absolute after:w-[25px] after:h-[25px] after:bottom-0 after:-right-[29px] after:shadow-curve-bl-4px after:rounded-md">
+                            {blog.category}
+                        </div>
+                    </div>
+                    <div class="px-2 py-4 flex flex-col gap-1">
+                        <div class="flex items-center justify-between">
+                            <p class="text-blue-500 text-xs">{formateDDMMYYYY(blog.createdAt)}</p>
+                        </div>
+                        <h2 class="text-lg font-medium">{blog.title}</h2>
+                        <p class="text-slate-600 max-h-16 overflow-hidden text-ellipsis">
+                            {renderContentWithHighlight(blog?.content)}
+                        </p>
+                    </div>
+                </div>
+            </a>
+            ))
+            )}
+        </div> *@
+</div>
