@@ -1,0 +1,48 @@
+# Binaries & build files
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.vscode
+*.vs/
+*.swp
+
+# Logs & database
+*.log
+logs/
+*.ldb
+*.sqlite
+*.sqlite3
+*.db
+
+# Configurations
+appsettings.Development.json
+secrets.json
+
+# ASP.NET Core & Entity Framework
+Migrations/
+wwwroot/node_modules/
+wwwroot/lib/
+wwwroot/dist/
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+bower_components/
+.DS_Store
+
+# JetBrains Rider / Resharper
+.idea/
+*.DotSettings.user
+
+# Visual Studio
+.vscode/
+*.csproj.user
+*.ncrunch*
+*.coverage
+*.testsettings
+*.vsixmanifest
+*.vspx
+*.sln.docstates
